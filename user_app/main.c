@@ -4,7 +4,7 @@
 #include <unistd.h>
 
 // Nombre de archivo
-#define CDEV_NAME	"/dev/td3_uart"
+#define CDEV_NAME	"/dev/lux_control"
 // Maximo largo
 #define MAX_LEN		64
 

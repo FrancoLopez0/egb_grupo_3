@@ -3,11 +3,11 @@
 / {
 	compatible = "brcm,bcm2712";
 	fragment@0 {
-		target = <&uart1>;
+		target = <&uart0>;
 		__overlay__ {
+			status = "okay";
 			lux_control {
 				compatible = "brightlight,lux_control";
-				status = "okay";
 			};
 		};
 	};
