@@ -23,9 +23,9 @@ import time
 #         time.sleep(1)
 
 while True:
-    # cmd = input("lux_control:")
-    # with open('/dev/lux_control', 'w') as f:    
-    #     f.write(cmd + '\n')
+    cmd = input("lux_control:")
+    with open('/dev/lux_control', 'w') as f:    
+        f.write(cmd + '\n')
     with open('/dev/lux_control', 'r') as f:
         r = f.read()
         print(f"Lectura: {r}")

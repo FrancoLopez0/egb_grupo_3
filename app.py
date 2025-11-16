@@ -21,6 +21,7 @@ set_keys = {
 get_keys = {
     # **set_keys,
     "User": "user_params",
+    "Medicion BH1750" : "bh1750"
     # "Protecciones": "protec",
     # "Voltaje": "voltage",
     # "Corriente": "current",
@@ -63,8 +64,8 @@ def menu_principal():
     print("-------------------------------------------------")
     print("1> Enviar configuración")
     print("2> Obtener información")
-    print("3> Iniciar PID")
-    print("4> Frenar PID")
+    print("3> Enviar datos en tiempo real")
+    print("4> Frenar enviado de datos en tiempo real")
     print("5> Salir")
     print("-------------------------------------------------")
     flush_stdin()
@@ -119,9 +120,9 @@ def enviar_uart(msg):
     print("-------------------------------------------------")
     with open(DEV_PATH, "w") as dev:
         dev.write(msg + "\n")
-    # with open(DEV_PATH, "r") as dev:
-    #     resp = dev.read().strip()
-    # print(f"Respuesta: {resp}")
+    with open(DEV_PATH, "r") as dev:
+        resp = dev.read().strip()
+    print(f"Respuesta: {resp}")
     print("-------------------------------------------------")
     print("Presione tecla para continuar...")
     input()
@@ -134,8 +135,8 @@ if __name__ == "__main__":
     if not os.path.exists(DEV_PATH):
         print(f"Dispositivo {DEV_PATH} no encontrado.")
     else:
-        # main()
+        main()
         # enviar_uart("set set_point 700")
-        with open(DEV_PATH, "r") as dev:
-            resp = dev.read().strip()
-        print(f"Respuesta: {resp}")
+        # with open(DEV_PATH, "r") as dev:
+        #     resp = dev.read().strip()
+        # print(f"Respuesta: {resp}")

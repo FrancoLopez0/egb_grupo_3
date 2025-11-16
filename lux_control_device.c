@@ -255,7 +255,7 @@
 #include <linux/spinlock.h>
 
 // Autor del modulo
-#define AUTHOR              "Franco Lopez"
+#define AUTHOR              "LUX_CONTROL"
 // Nombre del char device
 #define CHRDEV_NAME         "lux_control"
 // Minor number del char device
